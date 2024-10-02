@@ -18,7 +18,7 @@ async function quantidadeUsuariosPorRede() {
         }
     ]
 
-    const laytout = [
+    const laytout = {
         plot_bgcolor: getCSS('--bg-color'),
         paper_bgcolor: getCSS('--bg-color'),
         title: {
@@ -32,7 +32,13 @@ async function quantidadeUsuariosPorRede() {
         },
         xaxis: {
             tickfont: tickConfig,
+            title: {
+                text: 'Nome da redes',
+                font: {
+                    color: getCSS('--secondary-color')
+                }
+            }
         }
-    ]
+    }
     
 }
