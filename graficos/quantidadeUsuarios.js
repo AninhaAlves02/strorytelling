@@ -38,7 +38,22 @@ async function quantidadeUsuariosPorRede() {
                     color: getCSS('--secondary-color')
                 }
             }
+        },
+    yaxis: {
+        tickfont: tickConfig,
+        title: {
+            text: 'Bilhoes de usuarios ativos',
+            font: {
+               color: getCSS('--secondary-color')
+            }
         }
-    }
-    
+    }   
 }
+
+const grafico = document.createElement('div')
+grafico.className = 'grafico'
+document.getElementById('graficos-container').appendChild(grafico)
+plotly.newplot(grafico, data, laytout)
+}
+
+quantidadeUsuariosPorRede()
