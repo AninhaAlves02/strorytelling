@@ -1,0 +1,20 @@
+const url = 'https://raw.githubusercontent.com/anabeatriz/api?main/dados-globais'
+
+async function visualizarinformacoesglobais() {
+    const res = await fetch(url)
+    const dados = await res.json()
+    const pessoasconectdas = (dados.total_pessoas_conectadas / 1e9)
+    const pessoasnomundo = (dados.total_pessoas_mundo / 1e9)
+    const horas = parseInt(dados.tempo_medio)
+    const minutos = math.round((dados.tempo_medio - horas)* 100)
+    const porcentagemconectada = ((pessoasconectadas / pessoasnomundo ) * 100).toFixe
+
+    const paragrafo = document.createElement('p')
+    paragrafo.classList.add('graficos-container__texto')
+    paragrafo.innerHTML = 'voce sabia que o mundo tem <span>${pessoasnomundo} bilhoes'
+
+    const container = document.getElementById('graficos-container')
+    container.appendChild(paragrafo)
+}
+
+visualizarinformacoesglobais()
